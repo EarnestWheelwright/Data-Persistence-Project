@@ -11,7 +11,9 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public Text bestScoreText;
     public GameObject GameOverText;
+    public Manager manager;
     
     private bool m_Started = false;
     private int m_Points;
@@ -36,6 +38,8 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+        manager = GameObject.Find("Manager").GetComponent<Manager>();
+        ScoreText.text = manager.playerName;
     }
 
     private void Update()
@@ -66,6 +70,10 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+    }
+    public int GetPoints()
+    {
+        return m_Points;
     }
 
     public void GameOver()
