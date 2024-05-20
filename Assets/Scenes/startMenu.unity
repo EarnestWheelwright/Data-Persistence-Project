@@ -298,7 +298,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 837497339}
         m_TargetAssemblyTypeName: MenuUIManager, Assembly-CSharp
-        m_MethodName: setPlayerName
+        m_MethodName: SetPlayerName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -641,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameField: {fileID: 208679729}
+  bestScoreText: {fileID: 780081879}
   manager: {fileID: 0}
 --- !u!114 &837497340
 MonoBehaviour:

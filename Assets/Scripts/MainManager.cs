@@ -39,7 +39,7 @@ public class MainManager : MonoBehaviour
             }
         }
         manager = GameObject.Find("Manager").GetComponent<Manager>();
-        ScoreText.text = manager.playerName;
+        SetBestScore();
     }
 
     private void Update()
@@ -80,5 +80,13 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        if(m_Points > manager.highScore)
+        {
+            manager.UpdateHighScore(m_Points);
+        }
+    }
+    public void SetBestScore()
+    {
+        bestScoreText.text = "Best Score: " + manager.highScoreName + ": " + manager.highScore;
     }
 }
